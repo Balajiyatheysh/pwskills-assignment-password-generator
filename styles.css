@@ -1,0 +1,79 @@
+body {
+  background-color: #01021c;
+  margin: 0;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+  background-color: #01021c;
+  padding: 3rem;
+  border-left: 4px solid white;
+  border-bottom: 2px solid white;
+  border-right: 0.5px solid white;
+  border-top: 0.5px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-size: x-large;
+}
+
+label {
+  font-weight: bold;
+}
+
+.number-input {
+  width: 4rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  height: 20px;
+}
+
+.password-display {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  border: 1px solid #333;
+  height: 0.5rem;
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  border-radius: .5rem;
+  font-weight: 100;
+}
+
+.btn {
+  background-color: #9379c7;
+  border: 2px solid white;
+  color: white;
+  padding: .5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px
+}
+
+.btn:hover {
+  background-color: #FFFFFF33;
+}
