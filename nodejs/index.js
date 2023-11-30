@@ -1,0 +1,71 @@
+const fs = require('fs');
+const os = require('os');
+
+const filename = 'nodejs_architecture.txt';
+const content = `
+# Introduction to Node.js
+
+Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser. It is built on Chrome's V8 JavaScript engine and uses an event-driven, non-blocking I/O model that makes it efficient for handling concurrent requests.
+
+Node.js is a popular choice for developing server-side applications, particularly for web applications that require real-time communication and data streaming. It is also used for developing network applications, command-line tools, and desktop applications.
+
+Node.js is a powerful and versatile platform that has gained popularity in recent years due to its efficiency, flexibility, and large ecosystem of modules. It is a great choice for developing a wide range of applications, from web applications to network applications to command-line tools.
+`;
+
+//write the content into the file
+fs.writeFile(filename, content, (err) => {
+  if (err) throw err;
+  console.log('File content updated successfully!');
+});
+
+//read the content to the console
+fs.readFile(filename, 'utf8', (err, content) => {
+  if (err) throw err;
+  console.log(content);
+});
+
+
+
+fs.readFile(filename, 'utf8', (err, content) => {
+  if (err) throw err;
+
+  // Append the "Advantages" section to the existing content
+  const updatedContent = content + `
+
+## Advantages of Node.js
+
+Node.js offers several advantages over traditional server-side technologies, making it a popular choice for developing modern applications:
+
+* **High Performance:** Node.js's event-driven, non-blocking I/O model makes it highly efficient for handling concurrent requests, leading to faster response times and improved performance.
+
+* **Scalability:** Node.js applications can easily scale to handle increasing workloads by adding more servers. This makes it suitable for building high-traffic and real-time applications.
+
+* **Real-time Applications:** Node.js's event-driven architecture and non-blocking I/O model make it ideal for developing real-time applications like chat servers, game servers, and data streaming applications.
+
+* **Ease of Development:** Node.js uses JavaScript, the same language as client-side scripting, making it easier for developers to learn and use. This also reduces the need for context switching between different languages for client-side and server-side development.
+
+* **Large Ecosystem:** Node.js has a vast and active ecosystem of open-source modules (over 2 million), making it easy to find pre-built libraries for various tasks, reducing development time and effort.
+
+* **Cross-Platform Compatibility:** Node.js runs on Windows, macOS, Linux, and other Unix-based operating systems, making it a versatile platform for developing applications for different environments.
+`;
+
+  // Write the updated content to the file
+  fs.writeFile(filename, updatedContent, (err) => {
+    if (err) throw err;
+    console.log('Content updated successfully!');
+  });
+});
+
+
+//to delete a file sucessfully
+// fs.unlink(filename, (err) => {
+//   if (err) throw err;
+//   console.log('File deleted successfully!');
+// });
+
+//question 6
+const osName = os.platform();
+const osRelease = os.release();
+
+console.log(`Operating System Name: ${osName}`);
+console.log(`Operating System Release: ${osRelease}`);
